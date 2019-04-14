@@ -38,16 +38,16 @@
                 <span class="error">Valid email address is required</span>
             </div>
             <div class="inputGroup">
-                <input type="checkbox" id="consent-newsletter" name="consent-newsletter"
+                <input type="checkbox" id="consentNewsletter" name="consentNewsletter"
                        class="checkbox"/>
-                <label for="consent-newsletter" class="label">
+                <label for="consentNewsletter" class="label">
                     Let me know about upcoming meet-ups via a newsletter
                 </label>
             </div>
             <div class="inputGroup">
-                <input type="checkbox" id="consent-availability" name="consent-availability"
+                <input type="checkbox" id="consentAvailability" name="consentAvailability"
                        class="checkbox"/>
-                <label for="consent-availability" class="label">
+                <label for="consentAvailability" class="label">
                     Let me know occasionally about new Gin's available in London via a newsletter.
                 </label>
             </div>
