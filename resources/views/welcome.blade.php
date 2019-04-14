@@ -10,6 +10,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://www.google.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <style>
         @php
             include('css/app.css');
