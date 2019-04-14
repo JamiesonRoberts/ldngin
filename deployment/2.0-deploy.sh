@@ -25,5 +25,4 @@ ssh ${!deploy_user} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 
     php artisan migrate --force;
     php artisan view:clear;
     php artisan config:cache;
-    php artisan route:cache;
     exit;'
