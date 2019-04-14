@@ -92,17 +92,26 @@
         });
     })(document);
 
-    const form = document.getElementById('signUpForm');
-    var onSubmit = function(token) {
-        form.submit();
+    const onSubmit = function() {
+        document.getElementById('signUpForm').submit();
     };
-    form.querySelector('[type="submit"]').disabled = false;
-    form.addEventListener('submit', function (e) {
-        if (form.checkValidity()) {
-            e.preventDefault();
-            grecaptcha.execute();
-        }
-    });
+
+    const formSetup = function() {
+        document.getElementById('signUpForm').querySelector('[type="submit"]').disabled = false;
+        document.getElementById('signUpForm').addEventListener('submit', function (e) {
+            if (document.getElementById('signUpForm').checkValidity()) {
+                e.preventDefault();
+                grecaptcha.execute();
+            }
+        });
+    };
+
+    if (document.readyState !== 'loading') {
+        formSetup();
+    } else {
+        document.addEventListener('DOMContentLoaded', formSetup);
+    }
+
 </script>
 </body>
 </html>
