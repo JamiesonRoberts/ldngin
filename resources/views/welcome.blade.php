@@ -9,6 +9,7 @@
 
     <meta name="_token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <style>
         @php
             include('css/app.css');
@@ -52,6 +53,10 @@
                     Let me know occasionally about new Gin's available in London via a newsletter.
                 </label>
             </div>
+            <div id='recaptcha' class="g-recaptcha"
+                 data-sitekey="6LfT-Z0UAAAAAEIws6iMbZIVkugDyUi4KhqctzwU"
+                 data-callback="onSubmit"
+                 data-size="invisible"></div>
             <button class="button" type="submit" disabled>Sign me up!</button>
         </form>
     </div>
@@ -65,13 +70,7 @@
     </div>
 </main>
 <footer>Made with <span class="heart-icon"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z"></path></svg></span> in London, Canada</footer>
-<script src="{{ mix('js/app.js') }}" async></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
-    function onSubmit(token) {
-        document.getElementById("signUpForm").submit();
-    }
-
     WebFontConfig = {
         google: {
             families: ['Montserrat', 'Playfair Display'],
@@ -79,11 +78,31 @@
     };
 
     (function (d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js';
-        wf.async = true;
-        s.parentNode.insertBefore(wf, s);
+        const i = d.scripts[0];
+        const scripts = [
+            'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js',
+            'https://www.google.com/recaptcha/api.js',
+            '{{ mix('js/app.js') }}'
+        ];
+        scripts.forEach(function (script) {
+            const e = d.createElement('script');
+            e.src = script;
+            e.async = true;
+            i.parentNode.insertBefore(e, i)
+        });
     })(document);
+
+    const form = document.getElementById('signUpForm');
+    var onSubmit = function(token) {
+        form.submit();
+    };
+    form.querySelector('[type="submit"]').disabled = false;
+    form.addEventListener('submit', function (e) {
+        if (form.checkValidity()) {
+            e.preventDefault();
+            grecaptcha.execute();
+        }
+    });
 </script>
 </body>
 </html>
