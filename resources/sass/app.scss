@@ -44,7 +44,7 @@ img {
     width: 100%;
     margin: 0 auto;
     align-items: center;
-    @media (min-height: 48rem) {
+    @media (min-width: 48rem) {
         height: calc(100% - 5rem);
         min-height: calc(100vh - 5rem);
     }
