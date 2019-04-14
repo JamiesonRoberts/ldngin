@@ -18,12 +18,12 @@ scp ~/app.zip ${!deploy_user}:${!deploy_path}
 # Run the postdeploy.sh script.
 # Remove the deployment directory.
 # Then the SSH session.
-ssh ${!deploy_user} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PreferredAuthentications=publickey '
-	cd '${!deploy_path}';
-	unzip -o app.zip -d ./;
-	rm -r deployment;
-    php artisan migrate --force;
-    php artisan view:clear;
-    php artisan config:cache;
-    php artisan route:cache;
-    exit;'
+#ssh ${!deploy_user} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PreferredAuthentications=publickey '
+#	cd '${!deploy_path}';
+#	unzip -o app.zip -d ./;
+#	rm -r deployment;
+#    php artisan migrate --force;
+#    php artisan view:clear;
+#    php artisan config:cache;
+#    php artisan route:cache;
+#    exit;'
