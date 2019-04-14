@@ -15,7 +15,7 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 255);
+            $table->string('name', 255)->nullable();
             $table->longText('email');
             $table->boolean('consentNewsletter');
             $table->boolean('consentAvailability');

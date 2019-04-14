@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/submit', 'MemberController')->name('submit');
+
 Route::get('thank-you', function() {
     return view('thankYou');
 })->name('thank-you');
