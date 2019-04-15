@@ -2,8 +2,7 @@
 
 namespace App\Listeners;
 
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Events\MemberRegistration;
 
 class SendThankYou
 {
@@ -23,7 +22,7 @@ class SendThankYou
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(MemberRegistration $event)
     {
         //
     }
