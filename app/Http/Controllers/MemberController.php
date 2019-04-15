@@ -25,9 +25,7 @@ class MemberController extends Controller
         if (!$body->success) {
             return redirect()->back()->withInput();
         };
-
-        dump('form controller');
-        dd($request->all());
+        
         Member::create($request->all());
 
         return redirect()->route('thank-you');
