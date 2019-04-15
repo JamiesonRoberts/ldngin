@@ -20,7 +20,7 @@ class MemberController extends Controller
                 ]
             ]
         );
-3
+
         $body = json_decode((string) $response->getBody());
         if (!$body->success) {
             return redirect()->back()->withInput();
