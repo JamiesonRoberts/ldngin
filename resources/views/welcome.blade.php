@@ -53,23 +53,23 @@
             </div>
             <div class="inputGroup">
                 <input type="checkbox" id="consentNewsletter" name="consentNewsletter"
-                       class="checkbox" value="1"/>
+                       class="checkbox" value="1" required/>
                 <label for="consentNewsletter" class="label">
-                    Let me know about upcoming meet-ups via a newsletter
+                    I am over 19 years old and consent to be subscribed to know about upcoming meet-ups via a newsletter
                 </label>
             </div>
             <div class="inputGroup">
                 <input type="checkbox" id="consentAvailability" name="consentAvailability"
                        class="checkbox" value="1"/>
                 <label for="consentAvailability" class="label">
-                    Let me know occasionally about new Gin's available in London via a newsletter.
+                    I am over 19 years old and consent to be subscribed to know occasionally about new Gin's available in London via a newsletter
                 </label>
             </div>
             <div id='recaptcha' class="g-recaptcha"
                  data-sitekey="6LfT-Z0UAAAAAEIws6iMbZIVkugDyUi4KhqctzwU"
                  data-callback="onSubmit"
                  data-size="invisible"></div>
-            <button class="button" type="submit" disabled>Sign me up!</button>
+            <button class="button" type="submit" disabled>Sign me up! <span><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="compass" class="svg-inline--fa fa-compass fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M264.97 272.97c9.38-9.37 9.38-24.57 0-33.94-9.37-9.37-24.57-9.37-33.94 0-9.38 9.37-9.38 24.57 0 33.94 9.37 9.37 24.57 9.37 33.94 0zM351.44 125c-2.26 0-4.51.37-6.71 1.16l-154.9 55.85c-7.49 2.7-13.1 8.31-15.8 15.8l-55.85 154.91c-5.65 15.67 10.33 34.27 26.4 34.27 2.26 0 4.51-.37 6.71-1.16l154.9-55.85c7.49-2.7 13.1-8.31 15.8-15.8l55.85-154.9c5.64-15.67-10.33-34.28-26.4-34.28zm-58.65 175.79l-140.1 50.51 50.51-140.11 140.11-50.51-50.52 140.11zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 464c-119.1 0-216-96.9-216-216S128.9 40 248 40s216 96.9 216 216-96.9 216-216 216z"></path></svg></span></button>
         </form>
     </div>
     <div class="featured-image">
@@ -106,12 +106,13 @@
 
     function onSubmit() {
         document.getElementById('signUpForm').submit();
-    };
+    }
 
     const formSetup = function() {
         document.getElementById('signUpForm').querySelector('[type="submit"]').disabled = false;
         document.getElementById('signUpForm').addEventListener('submit', function (e) {
             if (document.getElementById('signUpForm').checkValidity()) {
+                document.getElementById('signUpForm').querySelector('[type="submit"]').disabled = true;
                 e.preventDefault();
                 grecaptcha.execute();
             }

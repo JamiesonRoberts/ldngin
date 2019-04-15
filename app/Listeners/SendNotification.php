@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\MemberRegistration;
+use App\Mail\SubscriptionNotification;
+use Illuminate\Support\Facades\Mail;
 
 class SendNotification
 {
@@ -24,6 +26,6 @@ class SendNotification
      */
     public function handle(MemberRegistration $event)
     {
-        //
+        Mail::to(env('NOTIFICATION_EMAIL'))->send(new SubscriptionNotification($event->submission));
     }
 }

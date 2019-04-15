@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\MemberRegistration;
+use App\Mail\ThankYou;
+use Illuminate\Support\Facades\Mail;
 
 class SendThankYou
 {
@@ -24,6 +26,6 @@ class SendThankYou
      */
     public function handle(MemberRegistration $event)
     {
-        //
+        Mail::to($event->submission->email)->send(new ThankYou($event->submission));
     }
 }
