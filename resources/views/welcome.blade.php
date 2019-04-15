@@ -26,6 +26,17 @@
         <h2>Sign up</h2>
         <form autocomplete="off" method="post" action="{{ url('submit') }}" id="signUpForm">
             @csrf
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="inputGroup textInput">
                 <input type="text" id="name" name="name" placeholder="John Smith"
                        class="inputField" pattern=".*\S.*">
@@ -42,14 +53,14 @@
             </div>
             <div class="inputGroup">
                 <input type="checkbox" id="consentNewsletter" name="consentNewsletter"
-                       class="checkbox"/>
+                       class="checkbox" value="1"/>
                 <label for="consentNewsletter" class="label">
                     Let me know about upcoming meet-ups via a newsletter
                 </label>
             </div>
             <div class="inputGroup">
                 <input type="checkbox" id="consentAvailability" name="consentAvailability"
-                       class="checkbox"/>
+                       class="checkbox" value="1"/>
                 <label for="consentAvailability" class="label">
                     Let me know occasionally about new Gin's available in London via a newsletter.
                 </label>
@@ -93,7 +104,7 @@
         });
     })(document);
 
-    const onSubmit = function() {
+    function onSubmit() {
         document.getElementById('signUpForm').submit();
     };
 

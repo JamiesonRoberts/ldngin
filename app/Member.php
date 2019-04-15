@@ -15,6 +15,7 @@ class Member extends Model
         'email',
         'consentNewsletter',
         'consentAvailability',
+        'g-recaptcha-response'
     ];
 
     protected $dispatchesEvents = [

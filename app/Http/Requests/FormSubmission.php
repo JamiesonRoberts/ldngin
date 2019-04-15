@@ -24,7 +24,11 @@ class FormSubmission extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'max:255',
+            'email' => 'required|email',
+            'consentNewsletter' => 'nullable|boolean',
+            'consentAvailability' => 'nullable|boolean',
+            'g-recaptcha-response' => 'required'
         ];
     }
 }

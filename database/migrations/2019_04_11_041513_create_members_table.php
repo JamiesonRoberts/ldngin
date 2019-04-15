@@ -17,8 +17,9 @@ class CreateMembersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 255)->nullable();
             $table->longText('email');
-            $table->boolean('consentNewsletter');
-            $table->boolean('consentAvailability');
+            $table->boolean('consentNewsletter')->default(0);
+            $table->boolean('consentAvailability')->default(0);
+            $table->longText('g-recaptcha-response');
             $table->timestamps();
         });
     }
