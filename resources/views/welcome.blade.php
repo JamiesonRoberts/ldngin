@@ -24,7 +24,7 @@
         <p>Welcome to the #ldnont Gin Club, a social gathering of Gin aficionados in London,
             Ontario.</p>
         <h2>Sign up</h2>
-        <form autocomplete="off" method="post" action="{{ url('submit') }}" id="signUpForm">
+        <form autocomplete="on" method="post" action="{{ url('submit') }}" id="signUpForm">
             @csrf
 
             @if ($errors->any())

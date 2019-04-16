@@ -21,12 +21,14 @@ class MemberController extends Controller
             ]
         );
 
-        $body = json_decode((string) $response->getBody());
+        $body = json_decode((string)$response->getBody());
         if (!$body->success) {
             return redirect()->back()->withInput();
         };
-        
+
         Member::create($request->all());
+
+
 
         return redirect()->route('thank-you');
     }
