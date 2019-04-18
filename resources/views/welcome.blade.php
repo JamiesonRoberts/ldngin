@@ -11,11 +11,20 @@
     <link rel="preconnect" href="https://www.google.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <style>
         @php
             include('css/app.css');
         @endphp
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138582613-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138582613-1');
+    </script>
 </head>
 <body>
 <main class="container">

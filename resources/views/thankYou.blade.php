@@ -4,16 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-    <meta name="description" content="">
+    <title>Thank You! | #ldnont Gin Club | Celebrating great Gin together</title>
+    <meta name="description" content="The #ldnont Gin Club is a social gathering of Gin aficionados in London, Ontario, who enjoy great gin.">
 
     <meta name="_token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <style>
         @php
             include('css/app.css');
         @endphp
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138582613-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138582613-1');
+    </script>
 </head>
 <body>
 <main class="container">
