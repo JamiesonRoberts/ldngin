@@ -1,5 +1,12 @@
+import PlausibleProvider from 'next-plausible'
 import '../styles/globals.css'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const App = ({ Component, pageProps }) => {
+    return (
+        <PlausibleProvider domain='ldngin.ca' trackOutboundLinks={true}>
+            <Component {...pageProps} />
+        </PlausibleProvider>
+    )
 }
+
+export default App
