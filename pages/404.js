@@ -1,7 +1,8 @@
 import Head from 'next/head'
 
 const layoutStyles = {
-    minHeight: '100vh',
+    minHeight: 'calc(100vh - 1rem)',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -12,7 +13,6 @@ export default function Error404() {
         <>
             <Head>
                 <title>404 - Page not found</title>
-                <meta name='description' content='' />
             </Head>
 
             <main style={layoutStyles}>
