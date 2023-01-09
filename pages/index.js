@@ -117,6 +117,7 @@ export default function Home() {
                     width={1000}
                     height={667}
                     sizes='(min-width: 56.25rem) 60vw, 99vw'
+                    priority
                 />
             </aside>
             <footer className={styles.footer} style={{ gridArea: 'footer' }}>
