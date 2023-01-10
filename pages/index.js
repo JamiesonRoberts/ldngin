@@ -84,7 +84,16 @@ export default function Home() {
                     color='#1c1c1b'
                 />
                 <meta name='msapplication-TileColor' content='#1c1c1b' />
-                <meta name='theme-color' content='#ff0000' />
+                <meta
+                    name='theme-color'
+                    content='#CCCCCC'
+                    media='(prefers-color-scheme: light)'
+                />
+                <meta
+                    name='theme-color'
+                    content='#1C1C1B'
+                    media='(prefers-color-scheme: dark)'
+                />
             </Head>
             <header
                 className={classnames(styles.contentSpacer, styles.header)}
