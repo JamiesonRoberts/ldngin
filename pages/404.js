@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import Link from 'next/link'
+
+import Logo from '../components/Logo'
 
 const layoutStyles = {
     minHeight: 'calc(100vh - 1rem)',
@@ -16,7 +19,9 @@ export default function Error404() {
             </Head>
 
             <main style={layoutStyles}>
-                <h1>404 - page not found</h1>
+                <Logo tag={'h1'} />
+                <h2>404 - Page Not Found</h2>
+                <Link href={'/'}>Return back to the main page</Link>
             </main>
         </>
     )
