@@ -1,0 +1,3 @@
+Sitemap: https://ldngin.ca/sitemap.xml
+User-agent:*
+Disallow:
