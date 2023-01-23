@@ -13,6 +13,26 @@
         --background-rgb: 28, 28, 27;
         --foreground-rgb: 222, 222, 222;
     }
+
+    html {
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        /* turns off smooth-scrolling behavior (if turned on) when prefers-reduced-motion is active*/
+        scroll-behavior: auto;
+    }
+
+    *:not(.animates-without-motion),
+    *:not(.animates-without-motion)::before,
+    *:not(.animates-without-motion)::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 *, *::before, *::after {
@@ -39,10 +59,3 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: inherit;
 }
-
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-}
-
