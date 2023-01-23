@@ -2,20 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import classnames from 'classnames'
 
-import Logo from '../components/Logo'
+import Logo from '@/components/Logo'
 
-import styles from '../styles/Index.module.css'
-import cocktail from '../public/cocktail.webp'
+import styles from '@/styles/Index.module.css'
+import cocktail from '@/public/cocktail.webp'
 
 export default function Home() {
     return (
         <div className={styles.layout}>
             <Head>
-                <meta
-                    name='viewport'
-                    content='width=device-width, initial-scale=1'
-                />
-
                 <title>#ldnont Gin Club | Celebrating Great Gin Together</title>
                 <meta
                     name='title'
@@ -56,44 +51,7 @@ export default function Home() {
                     content='https://ldngin.ca/cocktail.jpg'
                 />
 
-                <link rel='icon' href='https://ldngin.ca/favicon.ico' />
-                <link
-                    rel='apple-touch-icon'
-                    sizes='180x180'
-                    href='https://ldngin.ca/apple-touch-icon.png'
-                />
-                <link
-                    rel='icon'
-                    type='image/png'
-                    sizes='32x32'
-                    href='https://ldngin.ca/favicon-32x32.png'
-                />
-                <link
-                    rel='icon'
-                    type='image/png'
-                    sizes='16x16'
-                    href='/favicon-16x16.png'
-                />
-                <link
-                    rel='manifest'
-                    href='https://ldngin.ca/site.webmanifest'
-                />
-                <link
-                    rel='mask-icon'
-                    href='https://ldngin.ca/safari-pinned-tab.svg'
-                    color='#1c1c1b'
-                />
-                <meta name='msapplication-TileColor' content='#1c1c1b' />
-                <meta
-                    name='theme-color'
-                    content='#CCCCCC'
-                    media='(prefers-color-scheme: light)'
-                />
-                <meta
-                    name='theme-color'
-                    content='#1C1C1B'
-                    media='(prefers-color-scheme: dark)'
-                />
+                <link rel='canonical' href='https://ldngin.ca' />
             </Head>
             <header
                 className={classnames(styles.contentSpacer, styles.header)}
