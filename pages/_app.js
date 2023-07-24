@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import PlausibleProvider from 'next-plausible'
-import { Montserrat, Playfair_Display } from '@next/font/google'
+import { Montserrat, Playfair_Display } from 'next/font/google'
 
 import '@/styles/globals.css'
 
