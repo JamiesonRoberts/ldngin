@@ -69,8 +69,8 @@ export default function Home() {
                 </p>
                 <p>
                     <strong>
-                        Please note that the Gin Club is currently on hiatus,
-                        hopefully to return soon.
+                        The Gin Club is currently on hiatus, maybe to return in
+                        the future.
                     </strong>
                 </p>
             </main>
