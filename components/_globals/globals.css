@@ -1,0 +1,69 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+
+  --background-rgb: 222, 222, 222;
+  --foreground-rgb: 28, 28, 27;
+
+  --box-shadow: 0 8px 17px 2px rgba(28, 28, 27, 0.14),
+    0 3px 14px 2px rgba(28, 28, 27, 0.12), 0 5px 5px -3px rgba(28, 28, 27, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-rgb: 28, 28, 27;
+    --foreground-rgb: 222, 222, 222;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    /* turns off smooth-scrolling behavior (if turned on) when prefers-reduced-motion is active*/
+    scroll-behavior: auto;
+  }
+
+  *:not(.animates-without-motion),
+  *:not(.animates-without-motion)::before,
+  *:not(.animates-without-motion)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: var(--montserrat);
+  line-height: 1.3;
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--playfair);
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+}
