@@ -3,12 +3,13 @@ import Link from 'next/link'
 import Logo from '@/components/Logo'
 
 const layoutStyles = {
-  minHeight: 'calc(100vh - 1rem)',
+  minHeight: 'calc(100vh - 2rem)',
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  gap: '0.5rem',
 }
 
 export const metadata = {
@@ -17,10 +18,12 @@ export const metadata = {
 
 export default function Error404() {
   return (
-    <main style={layoutStyles}>
-      <Logo tag={'div'} />
-      <h1>404 - Page Not Found</h1>
+    <div style={layoutStyles}>
+      <Logo tag={'h1'} />
+      <p>
+        <strong>404 - Page Not Found</strong>
+      </p>
       <Link href={'/'}>Return back to the main page</Link>
-    </main>
+    </div>
   )
 }

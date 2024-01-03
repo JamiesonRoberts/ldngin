@@ -7,12 +7,13 @@ import * as Sentry from '@sentry/nextjs'
 import Logo from '@/components/Logo'
 
 const layoutStyles = {
-  minHeight: 'calc(100vh - 1rem)',
+  minHeight: 'calc(100vh - 2rem)',
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  gap: '0.5rem',
 }
 
 export default function Error({ error }) {
@@ -22,10 +23,12 @@ export default function Error({ error }) {
   }, [error])
 
   return (
-    <main style={layoutStyles}>
-      <Logo tag={'div'} />
-      <h1>An Error Occurred</h1>
+    <div style={layoutStyles}>
+      <Logo tag={'h1'} />
+      <p>
+        <strong>An Error Occurred</strong>
+      </p>
       <Link href={'/'}>Return back to the main page</Link>
-    </main>
+    </div>
   )
 }

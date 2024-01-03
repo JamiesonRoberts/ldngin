@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--playfair-display',
+  variable: '--playfair',
   fallback: ['serif'],
   display: 'swap',
 })

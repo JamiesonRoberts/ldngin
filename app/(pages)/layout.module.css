@@ -1,0 +1,49 @@
+.layout {
+  max-width: 87.5rem;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    'header'
+    'main'
+    'aside'
+    'footer';
+}
+
+@media (min-width: 56.25rem) {
+  .layout {
+    grid-template-areas:
+      'header aside'
+      'main aside'
+      'footer footer';
+    grid-template-rows: 1fr 1fr auto;
+    grid-auto-columns: 1fr 2fr;
+    min-height: calc(100vh - 2rem);
+  }
+}
+
+.header {
+  padding: 1rem 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 56.25rem) {
+  .header {
+    align-self: end;
+    padding-top: 0;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.footerSVG {
+  height: 1em;
+}
