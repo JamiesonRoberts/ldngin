@@ -45,7 +45,9 @@ export default function RootLayout({ children }) {
       lang='en-CA'
       className={`${playfair.variable} ${montserrat.variable}`}
     >
-      <CloudflareWebAnalyticsProvider token={'XXXXXXXXX'} />
+      <CloudflareWebAnalyticsProvider
+        token={'a3fd2bd56c7947d288acdd80fa5397bf'}
+      />
       <body>{children}</body>
     </html>
   )
