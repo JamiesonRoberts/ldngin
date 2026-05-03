@@ -3,10 +3,6 @@
   --border-radius: 0.75rem;
   --background-rgb: 222, 222, 222;
   --foreground-rgb: 28, 28, 27;
-  --box-shadow:
-    0 0.5rem 1rem 0.125rem rgb(28 28 27 / 14%),
-    0 0.1875rem 0.875rem 0.125rem rgb(28 28 27 / 12%),
-    0 0.3125rem 0.3125rem -0.1875rem rgb(28 28 27 / 20%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,7 +68,10 @@ img {
   width: 100%;
   max-width: 100%;
   height: auto;
-  box-shadow: var(--box-shadow);
+  box-shadow:
+    0 0.5rem 1rem 0.125rem rgb(28 28 27 / 14%),
+    0 0.1875rem 0.875rem 0.125rem rgb(28 28 27 / 12%),
+    0 0.3125rem 0.3125rem -0.1875rem rgb(28 28 27 / 20%);
   display: block;
 }
 
