@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '@/layouts/Layout.astro'
+
+import cocktail from '@/assets/cocktail.jpg'
+---
+
+<Layout
+  seo={{
+    title: '#ldnont Gin Club | Celebrating Great Gin Together',
+    description:
+      'The #ldnont Gin Club is a social gathering of Gin aficionados in London, Ontario, who enjoy great gin.',
+  }}
+>
+  <main class:list={'main'}>
+    <p>
+      Welcome to the #ldnont Gin Club, a social gathering of Gin aficionados in
+      London, Ontario.
+    </p>
+    <p>
+      <strong>
+        The Gin Club is currently on hiatus, maybe it will return in the future.
+      </strong>
+    </p>
+  </main>
+  <aside>
+    <Image
+      src={cocktail}
+      alt={'A full cocktail glass with lemon garnish sitting on a dark wooden table with a cocktail spoon and lemon slices, in front of a dark wooden board background.'}
+      priority={true}
+    />
+  </aside>
+</Layout>
